@@ -1,19 +1,24 @@
 import { useState } from 'react'
 import '../styles/card.css'
 
-export const Card = ({ imagen, titulo, descripcion, precio, handleAgregar, handleQuitar }) => {
+export const Card = ({
+  imagen,
+  titulo,
+  descripcion,
+  precio,
+  handleAgregar,
+  handleQuitar,
+}) => {
+  const [added, setAdded] = useState(false) // este estado deberia ser manejodo desde el context para saber el estado de cada producto en global
 
-  const [added, setAdded] = useState(false)
-
-  const clickAgregar = () =>{
+  const clickAgregar = () => {
     setAdded(true)
     handleAgregar()
   }
-  const clickQuitar = () =>{
+  const clickQuitar = () => {
     setAdded(false)
     handleQuitar()
   }
-
 
   return (
     <div className="tarjeta">
@@ -23,21 +28,19 @@ export const Card = ({ imagen, titulo, descripcion, precio, handleAgregar, handl
         <p className="tarjeta-descripcion">{descripcion}</p>
         <p className="tarjeta-precio">{precio}</p>
 
-        {added
-          ?
-          <button
-            type="button"
-            className="boton-quitar"
-            onClick={clickQuitar}
-          >Quitar del Carrito</button>
-          :
+        {added ? (
+          <button type="button" className="boton-quitar" onClick={clickQuitar}>
+            Quitar del Carrito
+          </button>
+        ) : (
           <button
             type="button"
             className="boton-agregar"
             onClick={clickAgregar}
-          >Agregar al Carrito</button>
-
-        }
+          >
+            Agregar al Carrito
+          </button>
+        )}
       </div>
     </div>
   )

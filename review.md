@@ -1,0 +1,4 @@
+1. visualmente deberias dejar el nav bar en el top de la app `sticky` https://developer.mozilla.org/en-US/docs/Web/CSS/position (esto se pone en un layout para que todas las paginas lo renderen igual)
+2. los botones en el carrito de compras deberias darles un margin para que no esten tan juntos en la seleccion de las catidades
+3. si el item que quiero comprar lo agrego 2 veces desde la pantalla de carrito en el carrito me sale duplicado el item, esto es porque ni estas uzando el context correctamente, el context y el provider son precisamente para eso para tu poder saber cuales son los items que estan en el carrito y cuales no, ademas de la cantidad que hay de cada uno en cada momento tanto en el carrito como la cantidad que te queda en stock
+4. me parece que puedes empezar a utilizar librerias de css como tailwind para que se te haga la vida mas facil a la h de estilar
